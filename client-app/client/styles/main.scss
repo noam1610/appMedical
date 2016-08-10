@@ -1,0 +1,26 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-theme";
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.imageBig {
+    font-size: 5em;
+}
+
+.imageHuge {
+    font-size: 8em;
+}
+
+.td {
+    font-size: 33px;
+}
+
+.fond {
+    background-color: #234509;
+}
+
+.space {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}

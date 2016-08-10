@@ -1,0 +1,58 @@
+<div>
+    <h1 align="center"> Medic'air </br>
+        <small>All you need as a doctor</small>
+    </h1>
+    <div class="container-fluid">
+        <div style="background-color: #5bc0de; padding: 5em;" class="row">
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
+                <h3>Quickly find your patient </h3>
+            </div>
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon  glyphicon-globe " aria-hidden="true"></span>
+                <h3> Access your data</h3>
+            </div>
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon glyphicon-edit " aria-hidden="true"></span>
+                <h3>Manage your patients</h3>
+            </div>
+            <div class="imageBig col-md-3" align="center">
+                <span class="glyphicon glyphicon-file " aria-hidden="true"></span>
+                <h3> Edit prescription</h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-top : 1em;" class="container-fluid row">
+
+        <div class=" col-md-4 "></div>
+        <div class="col-md-4 " style="color: blue; border-width:1px; border-style:dotted;border-color:black; padding: 3em; ">
+            <form class="form-horizontal ">
+                <div class="row ">
+                    <div class="form-group ">
+                        <label class="col-md-3 control-label ">Email</label>
+                        <div class="col-md-9 ">
+                            <input type="email" ng-model="vm.email" class="form-control " placeholder="Email ">
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="form-group ">
+                        <label class="col-md-3 control-label ">Password</label>
+                        <div class="col-md-9 ">
+                            <input type="password" ng-model="vm.password" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="form-group ">
+                        <div>
+                            <button type="submit" ng-click="vm.logIn()" class="col-md-12 btn btn-primary ">Sign in</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

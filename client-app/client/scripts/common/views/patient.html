@@ -1,0 +1,135 @@
+<div>
+    <h1 align="center"> Here is your patient Doc' </br>
+    </h1>
+
+    <div class="container-fluid">
+        <div class="row space">
+            <div align="center">
+                <button class="btn btn-warning" ng-click="vm.newVisit()">
+                    <font size="3"> New Visit</font>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div style="background-color: #5bc0de; padding: 2em;" class="row">
+            <div class="imageHuge col-md-3" align="center">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                <h3>Diagnostic </h3>
+            </div>
+            <div class=" col-md-9">
+                <div class="row">
+                    <div class="imageHuge col-md-4">
+                        <h3>Name</h3>
+                        <h4 class="text-uppercase">{{vm.patient.lastname +' '+ vm.patient.firstname}} </h4>
+                        <h3>ID number</h3>
+                        <h4 class="text-uppercase">{{vm.patient.id}} </h4>
+                    </div>
+                    <div class="col-md-4" style="font-size: 2em;">
+                        <ul>
+                            <li ng-repeat="visit in vm.patient.visit">
+                                <h3>{{visit.diagnostic}}
+                                    <small>{{vm.convert(visit.date)}}</small>
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4" style="font-size: 2em;">
+                        <h3>Visits</h3>
+                        <ul>
+                            <li ng-repeat="visit in vm.patient.visit">
+                                <h4>{{vm.convert(visit.date)}}
+                                </h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-top: 3em;"></div>
+        <div class="row">
+            <!-- <div class="col-md-6"> -->
+            <div class="panel panel-success">
+                <div class="panel-heading" style="font-size: 1.5em;">Diagnosis</div>
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <li ng-repeat="visit in vm.patient.visit">
+                                <h3>{{vm.toUppercase(visit.diagnostic)}}
+                                    <small>{{vm.convert(visit.date)}}</small>
+                                </h3>
+                            </li>
+
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ng-click="vm.addDiagnostic(vm.diagnostic)" type="button">Add diagnostisis</button>
+                                </span>
+                                <input type="text" ng-model="vm.diagnostic" class="form-control" placeholder="Search for...">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="btn-group" dropdown>
+                                <button id="split-button" type="button" class="btn btn-success">Diagnostisis List</button>
+                                <button type="button" class="btn btn-success" dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="split-button">
+                                    <li role="menuitem"><a href="#">valve</a></li>
+                                    <li role="menuitem"><a href="#">aorte</a></li>
+                                    <li role="menuitem"><a href="#">pace</a></li>
+                                    <li class="divider"></li>
+                                    <li role="menuitem"><a href="#">maladie</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  </div> -->
+                </div>
+            </div>
+            <!--  <div class="col-md-6"> -->
+            <div class="panel panel-info">
+                <div class="panel-heading" style="font-size: 1.5em;">Physical examination</div>
+                <div class="panel-body">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <li ng-repeat="visit in vm.patient.visit">
+                                <h3>{{visit.diagnostic}}
+                                    <small>{{vm.convert(visit.date)}}</small>
+                                </h3>
+                            </li>
+
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Add examination</button>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Search for...">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="btn-group" dropdown>
+                                <button id="split-button" type="button" class="btn btn-info">examination List</button>
+                                <button type="button" class="btn btn-info" dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="split-button">
+                                    <li role="menuitem"><a href="#">valve</a></li>
+                                    <li role="menuitem"><a href="#">aorte</a></li>
+                                    <li role="menuitem"><a href="#">pace</a></li>
+                                    <li class="divider"></li>
+                                    <li role="menuitem"><a href="#">maladie</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--       </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

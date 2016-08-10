@@ -1,0 +1,73 @@
+<div>
+    <h1 align="center"> Let's search Doc' </br>
+    </h1>
+    <div class="row">
+        <div class="container-fluid col-lg-6 col-md-6">
+            <div align="center" style="padding: 1em;">
+                <h2>Search by id</h2>
+            </div>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon">id number !</span>
+                <input type="text" ng-model="vm.searchID" class="form-control" placeholder="id" aria-describedby="sizing-addon1">
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div align="center" style="padding: 1em;">
+                <h2>Search by name</h2>
+            </div>
+            <div class="input-group col-lg-6 col-md-6 input-group-lg">
+                <span class="input-group-addon">name</span>
+                <input type="text" class="form-control" placeholder="patient" aria-describedby="sizing-addon1">
+            </div>
+        </div>
+    </div>
+
+    <H2 ng-show="vm.noResult"> No Result</H2>
+
+    <div ng-repeat="patient in vm.patients">
+        {{patient.firstName}} -- {{patient.lastName}} -- {{patient.ID}} -- {{patient.yearBirth}} -- {{patient.email}} -- {{patient.phone}} -- {{patient.adress}}
+    </div>
+
+    <div style="padding-left: 3em; padding-right: 3em; padding-top: 3em;">
+        <table class="table table-striped">
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>id</th>
+                <th>Diagnostic</th>
+                <th>More information</th>
+            </tr>
+            <tr ng-repeat="patient in vm.patients">
+                <td style="font-size: 25px;">{{patient.firstName}}</td>
+                <td style="font-size: 25px;">{{patient.lastName}}</td>
+                <td style="font-size: 25px;">{{patient.ID}}</td>
+                <td>
+                    <accordion close-others="oneAtATime">
+                        <accordion-group is-open="status.open">
+                            <accordion-heading>
+                                Detaiils <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                            </accordion-heading>
+                            <div ng-repeat="visit in patient.visit">
+                                {{vm.convert(visit.date)}}
+                            </div>
+                        </accordion-group>
+                    </accordion>
+                </td>
+                <td>
+                    <button ui-sref="patient({id: '{{patient.ID}}'})" type="button" class="btn btn-info btn-lg btn-block">Info</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="row" style="padding-top: 1em;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="submit" ui-sref="create" class="btn btn-primary btn-block btn-lg">
+                Create Patient
+            </button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
